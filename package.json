@@ -5,7 +5,6 @@
   "main": "index",
   "dependencies": {
     "co": "~4.1.0",
-    "exeq": "~2.0.2",
     "thunkify": "~2.1.2",
     "win-spawn": "~2.0.0"
   },

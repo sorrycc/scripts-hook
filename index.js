@@ -2,22 +2,25 @@
 
 var wspawn = require('win-spawn');
 var thunkify = require('thunkify');
+var co = require('co');
 
-module.exports = function* (scripts, cmd, fn) {
+module.exports = function(scripts, cmd, fn) {
   var cmds = [];
 
   if (scripts['pre'+cmd]) cmds.push(scripts['pre'+cmd]);
   cmds.push(scripts[cmd] || fn);
   if (scripts['post'+cmd]) cmds.push(scripts['post'+cmd]);
 
-  var c;
-  while (c = cmds.shift()) {
-    if (typeof c === 'function') {
-      if (generator(c)) yield c;
-      else yield thunkify(c)();
+  return co(function *() {
+    var c;
+    while (c = cmds.shift()) {
+      if (typeof c === 'function') {
+        if (generator(c)) yield c;
+        else yield thunkify(c)();
+      }
+      else if (typeof c === 'string') yield spawn(c);
     }
-    else if (typeof c === 'string') yield spawn(c);
-  }
+  });
 };
 
 var spawn = thunkify(function(cmd, cb) {
