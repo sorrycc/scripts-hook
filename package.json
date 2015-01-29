@@ -1,0 +1,29 @@
+{
+  "name": "scripts-hook",
+  "version": "0.1.0",
+  "description": "The best module ever.",
+  "main": "index",
+  "dependencies": {
+    "co": "~4.1.0",
+    "exeq": "~2.0.2",
+    "thunkify": "~2.1.2",
+    "win-spawn": "~2.0.0"
+  },
+  "devDependencies": {
+    "istanbul": "0",
+    "jshint": "2",
+    "coveralls": "2",
+    "mocha": "1",
+    "should": "3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sorrycc/scripts-hook"
+  },
+  "homepage": "https://github.com/sorrycc/scripts-hook",
+  "author": "chencheng <sorrycc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "make test"
+  }
+}
