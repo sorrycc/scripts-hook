@@ -1,12 +1,12 @@
 {
   "name": "scripts-hook",
-  "version": "0.1.2",
-  "description": "The best module ever.",
+  "version": "0.1.3",
+  "description": "Add hook to cmd by scripts.",
   "main": "index",
   "dependencies": {
     "co": "~4.1.0",
-    "thunkify": "~2.1.2",
-    "win-spawn": "~2.0.0"
+    "exeq": "~2.0.2",
+    "thunkify": "~2.1.2"
   },
   "devDependencies": {
     "istanbul": "0",

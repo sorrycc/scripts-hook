@@ -2,6 +2,10 @@
 
 ---
 
+## 0.1.3
+
+Deps: wspawn -> exeq
+
 ## 0.1.2
 
 Wrap co inside

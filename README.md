@@ -5,7 +5,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/sorrycc/scripts-hook.svg?style=flat)](https://coveralls.io/r/sorrycc/scripts-hook)
 [![NPM downloads](http://img.shields.io/npm/dm/scripts-hook.svg?style=flat)](https://npmjs.org/package/scripts-hook)
 
-The best module ever.
+Add hook to cmd by scripts.
 
 ---
 

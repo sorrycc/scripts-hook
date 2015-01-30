@@ -1,6 +1,6 @@
 'use strict';
 
-var wspawn = require('win-spawn');
+var exeq = require('exeq');
 var thunkify = require('thunkify');
 var co = require('co');
 
@@ -18,17 +18,10 @@ module.exports = function(scripts, cmd, fn) {
         if (generator(c)) yield c;
         else yield thunkify(c)();
       }
-      else if (typeof c === 'string') yield spawn(c);
+      else if (typeof c === 'string') yield exeq(c);
     }
   });
 };
-
-var spawn = thunkify(function(cmd, cb) {
-  var args = cmd.split(/\s+/);
-  cmd = args.shift();
-  var s = wspawn(cmd, args, {stdio: 'inherit'});
-  s.on('close', cb);
-});
 
 function generator(value){
   return value
